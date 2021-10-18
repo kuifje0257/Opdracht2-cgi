@@ -2,27 +2,26 @@ window.addEventListener('load', (event) => {
     console.log('page is fully loaded');
 
     fetch('data.json')
-        .then(response => 
-            response.json()
-        )
+        .then(response => response.json())
         .then(data => {
             var tbl = document.getElementById("tblData");
             data.forEach(data => {
                 console.log(data)
+                //adding time
                 let DT = new Date();
                 let hours =DT.getHours();
                 let minutes = DT.getMinutes();
                 let seconds = DT.getSeconds();
                 let Mseconds = DT.getMilliseconds();
-                console.log(Mseconds)
 
+                //correcting time
                 if(hours <10)
                     hours = "0"+hours;
                 if(minutes<10)
                     minutes = "0"+minutes;
                 if(seconds<10)                    
                     seconds = "0"+seconds;
-
+                //milliseconds
                 if(Mseconds<10)                    
                     Mseconds = "000"+Mseconds;
                 if(10<=Mseconds && Mseconds<100)          
@@ -36,9 +35,6 @@ window.addEventListener('load', (event) => {
                                 <td>${Time}</tr>`;
                 
                                 tbl.innerHTML += htmlItem;
-
-
             })
         })
-        
 });

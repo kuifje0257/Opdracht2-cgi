@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/Opdracht2.dir/OP2_env-cgi.c.o  -o Opdracht2 
